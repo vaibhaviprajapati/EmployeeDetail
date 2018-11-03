@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Add Employee</h1>
+  <div>
+    <form [formGroup]="employeeData" (ngSubmit)="onSubmit()">
+
+      <div>
+        <label for="name">Name</label><br>
+        <input type="name" name="name" formControlName="name">
+
+      </div>
+      <br>
+      <div>
+        <label for="designation">Designation</label><br>
+        <select formControlName="designation">
+          <option value="1">HR</option>
+          <option value="2">Manager</option>
+          <option value="3">Team Leader</option>
+        </select>
+      </div>
+      <br>
+      <div>
+        <label for="date">Date</label><br>
+        <input type="date" name="date" formControlName="date">
+      </div>
+      <br>
+
+
+      <button type="submit" [disabled]="!employeeData.valid">Submit</button>
+
+    </form>
+  </div>
+</div>
+
+<span> ---------------------------------------</span>
+
+<div *ngFor="let data of postEmployeeData; let i= index">
+  <p>{{data | json}}</p>
+  <button class="delete" title="deletedata" (click)="delete(i)">Delete</button>
+</div>

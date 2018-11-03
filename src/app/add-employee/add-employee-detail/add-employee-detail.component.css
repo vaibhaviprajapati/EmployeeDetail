@@ -1,0 +1,11 @@
+.container{
+  height: 500px;
+  width: 500px;
+  background-color: rgb(218, 218, 214);
+ box-align: center;
+ text-align: center;
+}
+.inputSpace
+{
+  margin-left: 70px;
+}
